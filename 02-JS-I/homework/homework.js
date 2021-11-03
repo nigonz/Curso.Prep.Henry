@@ -71,11 +71,10 @@ function sonIguales(x, y) {
   // De lo contrario, devuelve "false"
   // Tu código:
   if(x===y){
-    var resultado=true;
+    return true;
   }
-    resultado=false;
-  
-  
+  return false;
+   
 }
 
 function tienenMismaLongitud(str1, str2) {
@@ -85,9 +84,11 @@ function tienenMismaLongitud(str1, str2) {
   var t=(str1).length;
   var t2=(str2).length;
   if(t===t2){
-    var resultado=true;
+    return true;
   }
-    resultado=false;
+  return false;
+  
+}
   
   
 }
@@ -97,10 +98,11 @@ function menosQueNoventa(num) {
   // De lo contrario, devuelve "false"
   // Tu código:
   if(num<90){
-    var resultado=true;
+    return true;
   }
-    resultado=false;
+  return false;
   
+}
 }
 
 function mayorQueCincuenta(num) {
@@ -108,10 +110,9 @@ function mayorQueCincuenta(num) {
   // De lo contrario, devuelve "false"
   // Tu código:
   if(num>50){
-    var resultado=true;
-  }else{
-    resultado=false;
+    return true;
   }
+  return false;
   
 }
 
