@@ -116,7 +116,7 @@ function mayorQueCincuenta(num) {
 function obtenerResto(x, y) {
   // Obten el resto de la división de "x" entre "y"
   // Tu código:
-  var resto=x%y;
+  return x % y;
   
 }
 
@@ -199,7 +199,7 @@ function agregarSimboloExclamacion(str) {
   // Agrega un símbolo de exclamación al final de la string "str" y devuelve una nueva string
   // Ejemplo: "hello world" pasaría a ser "hello world!"
   // Tu código:
-  var phrase= `${str}!`
+  var phrase= str +"!";
 }
 
 function combinarNombres(nombre, apellido) {
@@ -220,7 +220,7 @@ function obtenerSaludo(nombre) {
 function obtenerAreaRectangulo(alto, ancho) {
   // Retornar el area de un rectángulo teniendo su altura y ancho
   // Tu código:
-  return alto + ancho;
+  return alto * ancho;
   
 }
 
@@ -235,7 +235,7 @@ function retornarPerimetro(lado){
 function areaDelTriangulo(base, altura){
   //Desarrolle una función que calcule el área de un triángulo.
   //Escribe tu código aquí
-  return base*altura;
+  return (base*altura)/2;
 
 }
 
