@@ -179,45 +179,85 @@ function operadoresLogicos(num1, num2, num3) {
 
 
 }
-
-function esPrimo(numero) {
   // Devuelve "true" si "numero" es primo
   // De lo contrario devuelve "falso"
   // Pista: un número primo solo es divisible por sí mismo y por 1
   // Pista 2: Puedes resolverlo usando un bucle `for`
   // Nota: Los números 0 y 1 NO son considerados números primos
-  if((numero%numero===0)&&(numero%1===0)){
-    return true;
+ 
+function esPrimo(numero) { 
 
+  var cont=0;
+  
+    for(let i=2; i<=numero;i++){
+      
+          if(numero % i===0){
+            cont++;
+           }
+           console.log(cont);
+      }
+  
+      if(cont>1){
+        console.log(false);
+      }else{
+        console.log(true);
+      }
   }
-  return false;
-}
-
 function esVerdadero(valor){
   //Escribe una función que reciba un valor booleano y retorne “Soy verdadero” 
   //si su valor es true y “Soy falso” si su valor es false.
-  //Escribe tu código aquí
-
+  //Escribe tu código 
+  if(valor){
+    return "Soy verdadero";
+  }
+    return "Soy falso";
 }
 
 function tablaDelSeis(){
   //Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
   //La función devuelve un array con los resultados de la tabla de multiplicar del 6 en orden creciente.
   //Escribe tu código aquí   
+    var array=[];
+     for( var i=0;i<11;i++){
+   document.write(i*6);
+   array.push(i*6);
   
 }
+  
+  return  console.log(array);
+
+}
+
 
 function tieneTresDigitos(numero){
   //Leer un número entero y retornar true si tiene 3 dígitos. Caso contrario, retorna false.
   //Escribe tu código aquí
-  
-}
+  var cont=0;
+   while(numero>=1){
+    numero= numero/10;
+     cont++;
+   }
+  if(cont===3){
+    return true;
+  }else{
+  return false;
+   }
+  }
 
 function doWhile(numero) {
-  //Implementar una función tal que vaya aumentando el valor recibido en 5 hasta un límite de 8 veces
+  //Implementar una función tal que vaya aumentando el valor recibido en 5 hasta 
+  //un límite de 8 veces
   //Retornar el valor final.
   //Usar el bucle do ... while.
-}
+    var cont=0; 
+    do {
+      numero=numero*5;
+      cont++;
+    //  console.log(numero);
+      }while(cont<8);
+    return numero;
+  }
+
 
 
 // No modificar nada debajo de esta línea
