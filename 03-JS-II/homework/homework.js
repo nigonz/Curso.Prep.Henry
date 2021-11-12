@@ -7,7 +7,7 @@ function obtenerMayor(x, y) {
   // Tu código:
   if(x>y){
     return x;
-  }else if( x===y){
+  }
     return y;
 }
 
@@ -32,8 +32,9 @@ function conection(status) {
     return "On Line";
   }else if(status===2){
       return-"Away";
-  }
+  }else{
     return "Off Line";
+}
 }
 
 function saludo(idioma) {
@@ -88,21 +89,14 @@ function esDiezOCinco(numero) {
   // Devuelve "true" si "numero" es 10 o 5
   // De lo contrario, devuelve "false"
   // Tu código:
-  if((numero===10)||(numero===5)){
-    return true;
-  }
-
-    return false;
+    return numero===5 || numero===10;
 }
 
 function estaEnRango(numero) {
   // Devuelve "true" si "numero" es menor que 50 y mayor que 20
   // De lo contrario, devuelve "false"
   // Tu código:
-   if((numero<50)&&(numero>20)){
-      return true;
-   }
-        return false;
+        return numero <50 && numero;
   }
 
 
@@ -114,7 +108,7 @@ function esEntero(numero) {
   // De lo contrario, devuelve "false"
   // Pista: Puedes resolver esto usando `Math.floor`
   // Tu código:
- var resultado= numero-Math.floor(numero);
+ var resultado= numero%Math.floor(numero);
   if(resultado===0){
 
      return true;   
@@ -176,7 +170,7 @@ function operadoresLogicos(num1, num2, num3) {
             }else if((num1||num2||num3)===0){
 
               return"Error";
-
+            }
 
 }
   // Devuelve "true" si "numero" es primo
@@ -186,23 +180,19 @@ function operadoresLogicos(num1, num2, num3) {
   // Nota: Los números 0 y 1 NO son considerados números primos
  
 function esPrimo(numero) { 
-
-  var cont=0;
-  
-    for(let i=2; i<=numero;i++){
+       if(numero<2){
+         return false;
+         }
+          
+        for(let i=2; i<numero;i++){
       
           if(numero % i===0){
-            cont++;
-           }
-           console.log(cont);
+             return false
+              }
+                return true;
       }
-  
-      if(cont>1){
-        console.log(false);
-      }else{
-        console.log(true);
-      }
-  }
+    }
+
 function esVerdadero(valor){
   //Escribe una función que reciba un valor booleano y retorne “Soy verdadero” 
   //si su valor es true y “Soy falso” si su valor es false.
@@ -219,7 +209,7 @@ function tablaDelSeis(){
   //Escribe tu código aquí   
     var array=[];
      for( var i=0;i<11;i++){
-   document.write(i*6);
+  // document.write(i*6);
    array.push(i*6);
   
 }
@@ -232,17 +222,13 @@ function tablaDelSeis(){
 function tieneTresDigitos(numero){
   //Leer un número entero y retornar true si tiene 3 dígitos. Caso contrario, retorna false.
   //Escribe tu código aquí
-  var cont=0;
-   while(numero>=1){
-    numero= numero/10;
-     cont++;
-   }
-  if(cont===3){
-    return true;
-  }else{
-  return false;
-   }
+
+if(numero>99 && numero< 1000){
+  return true;
   }
+  return false; 
+}
+
 
 function doWhile(numero) {
   //Implementar una función tal que vaya aumentando el valor recibido en 5 hasta 
@@ -251,12 +237,12 @@ function doWhile(numero) {
   //Usar el bucle do ... while.
     var cont=0; 
     do {
-      numero=numero*5;
+      numero=numero+5;
       cont++;
     //  console.log(numero);
       }while(cont<8);
     return numero;
-  }
+  };
 
 
 
