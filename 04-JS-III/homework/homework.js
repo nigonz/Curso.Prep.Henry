@@ -2,26 +2,26 @@
 
 function devolverPrimerElemento(array) {
     // Devuelve el primer elemento de un  array (pasado por parametro) Tu código:
-    var array = [];
+
     return array[0];
 }
 
 function devolverUltimoElemento(array) {
     // Devuelve el último elemento de un array Tu código:
 
-    return array[array.lenght - 1];
+    return array[array.length - 1];
 }
 
 function obtenerLargoDelArray(array) {
     // Devuelve el largo de un array Tu código:
-    return array.lenght();
+    return array.length;
 }
 
 function incrementarPorUno(array) {
     // "array" debe ser una matriz de enteros (int/integers) Aumenta cada entero por
     // 1 y devuelve el array Tu código:
     var inc = [];
-    for (let i = 0; i < array.lenght; i++) {
+    for (let i = 0; i < array.length; i++) {
         inc[i] = array[i] + 1;
     }
     return inc;
@@ -29,15 +29,15 @@ function incrementarPorUno(array) {
 
 function agregarItemAlFinalDelArray(array, elemento) {
     // Añade el "elemento" al final del array y devuelve el array Tu código:
-    var newArray = array.push(elemento);
-    return newArray;
+    array.push(elemento);
+    return array;
 }
 
 function agregarItemAlComienzoDelArray(array, elemento) {
     // Añade el "elemento" al comienzo del array y devuelve el array Pista: usa el
     // método `.unshift` Tu código:
-    var newArray = array.unshift(elemento);
-    return newArray;
+    array.unshift(elemento);
+    return array;
 }
 
 function dePalabrasAFrase(palabras) {
@@ -61,7 +61,7 @@ function agregarNumeros(numeros) {
     // "numeros" debe ser un arreglo de enteros (int/integers) Suma todos los
     // enteros y devuelve el valor Tu código:
     var suma = 0;
-    for (let i = 0; i < numeros.lenght; i++) {
+    for (let i = 0; i < numeros.length; i++) {
         suma = suma + numeros[i];
     }
     return suma;
@@ -71,7 +71,7 @@ function promedioResultadosTest(resultadosTest) {
     // "resultadosTest" debe ser una matriz de enteros (int/integers) Itera (en un
     // bucle) los elementos del array, calcula y devuelve el promedio de puntajes Tu
     // código:
-    return agregarNumeros(resultadosTest) / resultadosTest.lenght;
+    return agregarNumeros(resultadosTest) / resultadosTest.length;
 }
 
 function numeroMasGrande(numeros) {
@@ -84,11 +84,11 @@ function multiplicarArgumentos() {
     // Usa la palabra clave `arguments` para multiplicar todos los argumentos y
     // devolver el producto Si no se pasan argumentos devuelve 0. Si se pasa un
     // argumento, simplemente devuélvelo Escribe tu código aquí:
-    if (arguments.lenght < 1) {
+    if (arguments.length < 1) {
         return 0;
     }
     var mult = 1;
-    for (var i = 0; i < arguments.lenght; i++) {
+    for (var i = 0; i < arguments.length; i++) {
 
         mult *= arguments[i];
     }
@@ -100,7 +100,7 @@ function cuentoElementos(arreglo) {
     // Realiza una función que retorne la cantidad de los elementos del arreglo cuyo
     // valor es mayor a 18. Escribe tu código aquí
     var cont = 0;
-    for (let i = 0; i < arreglo.lenght; i++) {
+    for (let i = 0; i < arreglo.length; i++) {
         if (arreglo[i] > 18) {
             cont++;
         }
@@ -136,9 +136,9 @@ function todosIguales(arreglo) {
     // Escriba la función todosIguales, que indique si todos los elementos de un
     // arreglo son iguales: retornar true, caso contrario retornar false. Escribe tu
     // código aquí
-    for (let i = 0; i < arreglo.lenght; i++) {
+    for (let i = 0; i < arreglo.length - 1; i++) {
 
-        if (arreglo[i] != arreglo[j + 1]) {
+        if (arreglo[i] !== arreglo[i + 1]) {
             return false;
         }
     }
@@ -153,14 +153,14 @@ function mesesDelAño(array) {
     // nuevo array y retornarlo. Si alguno de los meses no está, devolver: "No se
     // encontraron los meses pedidos" Tu código:
     var tresMeses = [];
-    for (let i = 0; i < array.lenght; i++) {
+    for (let i = 0; i < array.length; i++) {
         if (array[i] === "Enero" || array[i] === "Marzo" || array[i] === "Noviembre") {
             tresMeses.push(array[i]);
 
         }
     }
-    if (tresMeses.lenght === 3) {
-        return " No se encontraron los meses pedidos";
+    if (tresMeses.length < 3) {
+        return "No se encontraron los meses pedidos";
     } else {
         return tresMeses;
     }
@@ -171,8 +171,8 @@ function mayorACien(array) {
     // guardar en un nuevo array sólo los valores mayores a 100 (no incluye el 100).
     // Finalmente devolver el nuevo array. Tu código:
     var newArray = [];
-    for (let i = 0; i < array.lenght; i++) {
-        if (Array[i] > 100) {
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] > 100) {
             newArray.push(array[i]);
         }
     }
