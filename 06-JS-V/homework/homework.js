@@ -10,18 +10,21 @@ function crearUsuario() {
     // Devuelve la clase
     // Tu código:
 
+
     function Usuario(opciones) {
-
-        nombre = this.opciones.nombre;
-        email = this.opciones.email;
-        password = this.opciones.password;
-        Uduario.prototype.saludar = function() {
-            return `Hola, mi nombre es  ${this.nombre}`;
-        }
-        return Usuario;
-
+        this.usuario = opciones.usuario;
+        this.nombre = opciones.nombre;
+        this.email = opciones.email;
+        this.password = opciones.password;
     }
+    Usuario.prototype.saludar = function() {
+        return `Hola, mi nombre es ${this.nombre}`;
+    }
+    return Usuario;
 }
+
+
+
 
 function agregarMetodoPrototype(Constructor) {
     // Agrega un método al Constructor del `prototype`
@@ -43,12 +46,12 @@ function agregarStringInvertida() {
     String.prototype.reverse = function() {
 
         var cadenaInvertida = '';
-        for (let i = this.length - 1; i > 0; i--) {
+        for (let i = this.length; i >= 0; i--) {
             cadenaInvertida = cadenaInvertida + this.charAt(i);
 
         }
 
-        return this.cadenaInvertida;
+        return cadenaInvertida;
     }
 }
 
@@ -65,19 +68,17 @@ function agregarStringInvertida() {
 //  }
 
 class Persona {
-    constructor( /*Escribir los argumentos que recibe el constructor*/ ) {
-        // Crea el constructor:
-        function Persona(nombre, apellido, edad, domicilio) {
-            this.nombre = nombre;
-            this.apellido = apellido;
-            this.edad = edad;
-            this.domicilio = domicilio;
-            detalle = function() {
-                return
-                Nombre: this.nombre;
-                Apellido: this.apellido;
-                Edad: this.edad;
-                domicilio: this.domicilio;
+    constructor(nombre, apellido, edad, domicilio) {
+        this.nombre = nombre,
+            this.apellido = apellido,
+            this.edad = edad,
+            this.domicilio = domicilio
+        this.detalle = function() {
+            return {
+                Nombre: this.nombre,
+                Apellido: this.apellido,
+                Edad: this.edad,
+                domicilio: this.domicilio
 
 
             }
@@ -105,7 +106,7 @@ function agregarMetodo() {
 
     Persona.prototype.datos = function() {
 
-        return `${this.nombre}, ${edad} años`;
+        return `${this.nombre}, ${this.edad} años`;
     }
 
 }
