@@ -29,11 +29,11 @@ function conection(status) {
     //De lo contrario, presumimos que el usuario está "Offline"
     //Devolver el estado de conexión de usuario en cada uno de los casos.
     if (status === 1) {
-        return "On Line";
+        return "Online";
     } else if (status === 2) {
-        return -"Away";
+        return "Away";
     } else {
-        return "Off Line";
+        return "Offline";
     }
 }
 
@@ -85,7 +85,7 @@ function colors(color) {
             break;
 
         case "orange":
-            return "orange"
+            return "This is orange"
             break;
 
         default:
@@ -105,7 +105,7 @@ function estaEnRango(numero) {
     // Devuelve "true" si "numero" es menor que 50 y mayor que 20
     // De lo contrario, devuelve "false"
     // Tu código:
-    return numero < 50 && numero;
+    return numero < 50 && numero > 20;
 }
 
 
@@ -117,13 +117,10 @@ function esEntero(numero) {
     // De lo contrario, devuelve "false"
     // Pista: Puedes resolver esto usando `Math.floor`
     // Tu código:
-    var resultado = numero % Math.floor(numero);
-    if (resultado === 0) {
 
-        return true;
-    }
-    return false;
 
+
+    return numero % 1 === 0;
 
 }
 
@@ -134,24 +131,11 @@ function fizzBuzz(numero) {
     // Si "numero" es divisible entre 3 y 5 (ambos), devuelve "fizzbuzz"
     // De lo contrario, devuelve el numero
 
+    if (numero % 15 === 0) return "fizzbuzz";
+    if (numero % 3 === 0) return "fizz";
+    if (numero % 5 === 0) return "buzz";
 
-    function fizzBuzz(numero) {
-        if ((numero % 3 === 0) && (numero % 5 === 0)) {
-            return "fizzbuzz";
-        }
-        if (numero % 3 === 0) {
-
-            return "fizz";
-
-        } else if (numero % 5 === 0) {
-            return "buzz";
-        }
-
-        return numero;
-
-
-    }
-
+    return numero;
 }
 
 
@@ -166,21 +150,23 @@ function operadoresLogicos(num1, num2, num3) {
     //0 no es ni positivo ni negativo. Si alguno de los argumentos es 0, retornar "Error".
     //Si no se cumplen ninguna de las condiciones anteriores, retornar false. 
 
-    if ((num1 > num2) && (num1 > num3) && (num1 > 0)) {
-        return "Número 1 es mayor y positivo";
-
-    } else if ((num1 || num2 || num3) < 0) {
+    if (num1 < 0 || num2 < 0 || num3 < 0) {
         return "Hay negativos";
 
-    } else if (num3 > (num1 || num2)) {
-        var resultado = num3 + 1;
-        return resultado;
 
-    } else if ((num1 || num2 || num3) === 0) {
+    } else if (num1 === 0 || num2 === 0 || num3 === 0) {
 
         return "Error";
-    }
 
+    } else if ((num1 > num2) && (num1 > num3) && (num1 > 0)) {
+        return "Número 1 es mayor y positivo";
+
+
+    } else if (num3 > (num1 || num2)) {
+        return num3 + 1;
+    } else {
+        return false;
+    }
 }
 // Devuelve "true" si "numero" es primo
 // De lo contrario devuelve "falso"

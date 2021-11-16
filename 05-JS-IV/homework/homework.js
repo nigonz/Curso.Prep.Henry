@@ -69,9 +69,9 @@ function nuevoUsuario(nombre, email, password) {
     // Tu código:
     var usuario = {
 
-        nombre = nombre,
-        email = email.
-        clave = password,
+        nombre: nombre,
+        email: email,
+        clave: password,
     }
     return usuario;
 }
@@ -162,7 +162,7 @@ function agregarMetodoCalculoDescuento(producto) {
     // producto.calcularPrecioDescuento() -> 20 - (20 * 0.2)
 
     producto.calcularPrecioDescuento = function() {
-        this.precioProducto - (this.precioProducto * this.porcentajeDescuento);
+        producto.Precio - (producto.Precio * producto.porcentajeDescuento);
     }
     return producto;
 }
