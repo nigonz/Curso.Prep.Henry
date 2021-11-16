@@ -28,11 +28,9 @@ function agregarPropiedad(objeto, property) {
     // NOTA: El nombre de la propiedad no es "propiedad", el nombre es el 
     //valor del argumento llamado "property" (una cadena/string)
     // Tu código:
-
-    objeto['property'] = 'null';
+    objeto[property] = null;
 
     return objeto;
-
 }
 
 function invocarMetodo(objeto, metodo) {
@@ -40,7 +38,7 @@ function invocarMetodo(objeto, metodo) {
     // Invoca ese método
     // Nada necesita ser devuelto ("returned")
     // Tu código:
-    objeto[metodo];
+    objeto[metodo]();
 }
 
 function multiplicarNumeroDesconocidoPorCinco(objetoMisterioso) {
@@ -61,17 +59,18 @@ function eliminarPropiedad(objeto, unaPropiedad) {
     // Devuelve el objeto
     // Tu código:
     delete objeto[unaPropiedad];
+    return objeto;
 }
 
 function nuevoUsuario(nombre, email, password) {
     // Crea un nuevo objeto con las propiedades coincidiendo con los argumentos que se pasan a la función
     // Devuelve el objeto
     // Tu código:
-    var usuario = {
+    usuario = {
 
         nombre: nombre,
         email: email,
-        clave: password,
+        password: password,
     }
     return usuario;
 }
@@ -104,14 +103,14 @@ function verificarPassword(usuario, password) {
     // Devuelve "true" si coinciden
     // De lo contrario, devuelve "false"
     // // Tu código:
-    return usuario['contraseña'] === password;
+    return usuario['password'] === password;
 }
 
 function actualizarPassword(usuario, nuevaPassword) {
     // Reemplaza la contraseña existente en el objeto "usuario" con el valor de "nuevagPassword"
     // Devuelve el objeto
     // Tu código:
-    usuario['contraseña'] = nuevaPassword;
+    usuario.password = nuevaPassword;
     return usuario;
 }
 
@@ -131,7 +130,7 @@ function pasarUsuarioAPremium(usuarios) {
     // Devuelve el array de usuarios
     // Tu código:
     for (let i = 0; i < usuarios.length; i++) {
-        usuario[i].esPremium = true;
+        usuarios[i].esPremium = true;
     }
     return usuarios;
 }
@@ -162,7 +161,7 @@ function agregarMetodoCalculoDescuento(producto) {
     // producto.calcularPrecioDescuento() -> 20 - (20 * 0.2)
 
     producto.calcularPrecioDescuento = function() {
-        producto.Precio - (producto.Precio * producto.porcentajeDescuento);
+        return this.precio - (this.precio * this.porcentajeDeDescuento);
     }
     return producto;
 }
